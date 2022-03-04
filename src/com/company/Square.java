@@ -20,7 +20,6 @@ public class Square extends Shape{
         topRight = new Point(x + length/2, y + height/2);
         bottomLeft = new Point(x - length/2, y - height/2);
         bottomRight = new Point(x + length/2, y - height/2);
-        pointsList = new Point[]{center, topLeft, topRight, bottomLeft, bottomRight};
         computeArea();
         computeCircomference();
     }
@@ -39,15 +38,4 @@ public class Square extends Shape{
         circumference = 2 * length + 2 * height;
 
     }
-
-    Point getTopLeft(){
-        return topLeft;
-    }
-    Point getTopRight(){
-        return topRight;
-    }
-    Point getBotTomLeft(){
-        return bottomLeft;
-    }
-    Point getBottomRight(){ return bottomRight; }
 }

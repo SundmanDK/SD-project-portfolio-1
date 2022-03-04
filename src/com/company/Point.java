@@ -9,15 +9,15 @@ public class Point {
         this.y = y;
     }
 
+    public double distanceBetweenPoints(Point p){
+        return Math.sqrt(Math.pow((this.x - p.getX()),2) + Math.pow((this.y - p.getY()),2));
+    }
+
     public double getX() {
         return x;
     }
 
     public double getY() {
         return y;
-    }
-
-    public double distanceBetweenPoints(Point p){
-        return Math.sqrt(Math.pow((this.x - p.getX()),2) + Math.pow((this.y - p.getY()),2));
     }
 }

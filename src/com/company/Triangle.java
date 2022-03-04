@@ -19,7 +19,6 @@ public class Triangle extends Shape{
         double bottomPointsHeightOffset = (height / 3);
         bottomLeft = new Point(x - length/2, y - bottomPointsHeightOffset);     //Point A
         bottomRight = new Point(x + length/2, y - bottomPointsHeightOffset);    //Point C
-        pointsList = new Point[]{center, bottomLeft, top, bottomRight};
         computeArea();
         computeCircomference();
     }

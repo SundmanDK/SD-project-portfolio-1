@@ -7,9 +7,6 @@ public class TestShapes {
     Triangle triangle = new Triangle(1,1,3,2);
     Circle circle = new Circle(2,1.6,1);
     Square square = new Square(2,3,4,2);
-    Triangle triangle2 = new Triangle(0,10,3,2);
-    Circle circle2 = new Circle(10,0,3);
-    Square square2 = new Square(-10,0,2,3);
 
     Point p1 = new Point(1.33, 2);
     Point p2 = new Point(10,10);
@@ -82,41 +79,5 @@ public class TestShapes {
     @Test
     public void circleCircumference(){
         assertEquals((2 * circle.radius * Math.PI), circle.getCircumference());
-    }
-
-    @Test
-    public void overlapCircleSquare(){
-        assertTrue(circle.shapesOverlap(square));
-        assertTrue(square.shapesOverlap(circle));
-    }
-
-    @Test
-    public void overlapSquareTriangle(){
-        assertTrue(square.shapesOverlap(triangle));
-        assertTrue(triangle.shapesOverlap(square));
-    }
-
-    @Test
-    public void overlapCircleTriangle(){
-        assertTrue(circle.shapesOverlap(triangle));
-        assertTrue(triangle.shapesOverlap(circle));
-    }
-
-    @Test
-    public void noOverlapCircleSquare(){
-        assertFalse(circle.shapesOverlap(square2));
-        assertFalse(square2.shapesOverlap(circle));
-    }
-
-    @Test
-    public void noOverlapSquareTriangle(){
-        assertFalse(square.shapesOverlap(triangle2));
-        assertFalse(triangle2.shapesOverlap(square));
-    }
-
-    @Test
-    public void noOverlapCircleTriangle(){
-        assertFalse(circle2.shapesOverlap(triangle));
-        assertFalse(triangle.shapesOverlap(circle2));
     }
 }

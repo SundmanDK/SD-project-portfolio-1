@@ -25,33 +25,6 @@ public class Circle extends Shape{
     }                                                                   // the radius then the point is inside the circle.
 
     @Override
-    boolean shapesOverlap(Shape s) {
-        addPointOnCircumferenceTowardCenterOfShape(s);
-        boolean overlap = this.checkAllPointsForOverlap(s.pointsList);  //Check if any of Shape s' points are inside this
-        if (!overlap) {
-            overlap = s.checkAllPointsForOverlap(this.pointsList);      //Check if any of this' points are inside Shape s
-        }
-        return overlap;
-    }
-
-    public void addPointOnCircumferenceTowardCenterOfShape(Shape s){
-
-        double distanceBetweenCenters = distanceBetweenShapes(s);
-        //Vector between centers:
-        double x = this.center.getX() - s.getCenter().getX();
-        double y = this.center.getY() - s.getCenter().getY();
-        //Unit vector:
-        x /= distanceBetweenCenters;
-        y /= distanceBetweenCenters;
-        //Vector from circle center to the intersection between circle circumference and vector between centers:
-        x *= radius;
-        y *= radius;
-        //Point at intersection:
-        Point intersect = new Point(x, y);
-        pointsList = new Point[]{center, intersect};
-    }
-
-    @Override
     public void computeArea(){
         area = Math.pow(radius,2) *  Math.PI;
     }
